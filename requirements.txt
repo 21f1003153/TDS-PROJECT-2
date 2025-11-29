@@ -8,7 +8,7 @@ pydub
 SpeechRecognition
 langchain
 langchain-google-genai
-google-generativeai==0.9.0
+google-generativeai>=0.8,<0.9
 langgraph
 httpx
 python-dotenv
