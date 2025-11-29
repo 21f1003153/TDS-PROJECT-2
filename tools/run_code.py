@@ -1,11 +1,15 @@
-from google import genai
+import google.generativeai as genai
+
 import subprocess
 from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
-from google.genai import types
+from google.generativeai import types
 load_dotenv()
-client = genai.Client()
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=GOOGLE_API_KEY)
+model = genai.GenerativeModel("gemini-1.5-flash")
+
 
 def strip_code_fences(code: str) -> str:
     code = code.strip()

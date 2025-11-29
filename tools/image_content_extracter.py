@@ -1,9 +1,14 @@
+import os
 import pytesseract
+
+
+
+
 from PIL import Image
 from io import BytesIO
 import base64
 import os
-
+pytesseract.pytesseract.tesseract_cmd = os.getenv("TESSERACT_PATH")
 
 def load_image(image_input):
     """Internal helper to load an image from bytes, file path, base64, or PIL.Image."""
